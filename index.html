@@ -40,33 +40,36 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/10112025topokaart1940tagtopviewAC2010_aangepastV2_1.js"></script>
-        <script src="data/weiland1940_2.js"></script>
-        <script src="data/grasstruikenboom_3.js"></script>
-        <script src="data/zeewering1940_4.js"></script>
-        <script src="data/Skp_GroupI_brug1ebreggje_5.js"></script>
-        <script src="data/Skp_GroupI_brug2ebreggje_6.js"></script>
-        <script src="data/Skp_GroupI_brugblokjesbregge_7.js"></script>
-        <script src="data/Skp_GroupI_brugflevobrug_8.js"></script>
-        <script src="data/Skp_GroupI_brugkleinbreggjeladlangestreek_9.js"></script>
-        <script src="data/Skp_GroupI_brugooievaarsnest_10.js"></script>
-        <script src="data/Skp_GroupI_brugRienbregge_11.js"></script>
-        <script src="data/Skp_GroupI_brugstoomgemaal_12.js"></script>
-        <script src="data/Skp_GroupI_brugtruitjeszijlbregge_13.js"></script>
-        <script src="data/Skp_GroupI_brugjetramspoorbrekken_14.js"></script>
-        <script src="data/Skp_GroupI_fundamentstoomgemaal_15.js"></script>
-        <script src="data/Skp_GroupI_fundamentvuurtoren_16.js"></script>
-        <script src="data/Skp_GroupI_sluisinlaatenspui_17.js"></script>
-        <script src="data/percelen_18.js"></script>
-        <script src="data/trappenenbetonscheidingschans_19.js"></script>
-        <script src="data/zandstrand_20.js"></script>
-        <script src="data/Verharding_21.js"></script>
-        <script src="data/stratennieuw228oktvlakken_laatst_22.js"></script>
-        <script src="data/panden1940topo_aangepast_23.js"></script>
+        <script src="data/grasstruikenboom_1.js"></script>
+        <script src="data/zeewering1940_2.js"></script>
+        <script src="data/Skp_GroupI_brug1ebreggje_3.js"></script>
+        <script src="data/Skp_GroupI_brug2ebreggje_4.js"></script>
+        <script src="data/Skp_GroupI_brugblokjesbregge_5.js"></script>
+        <script src="data/Skp_GroupI_brugflevobrug_6.js"></script>
+        <script src="data/Skp_GroupI_brugkleinbreggjeladlangestreek_7.js"></script>
+        <script src="data/Skp_GroupI_brugooievaarsnest_8.js"></script>
+        <script src="data/Skp_GroupI_brugRienbregge_9.js"></script>
+        <script src="data/Skp_GroupI_brugstoomgemaal_10.js"></script>
+        <script src="data/Skp_GroupI_brugtruitjeszijlbregge_11.js"></script>
+        <script src="data/Skp_GroupI_brugjetramspoorbrekken_12.js"></script>
+        <script src="data/Skp_GroupI_fundamentstoomgemaal_13.js"></script>
+        <script src="data/Skp_GroupI_fundamentvuurtoren_14.js"></script>
+        <script src="data/Skp_GroupI_sluisinlaatenspui_15.js"></script>
+        <script src="data/percelen_16.js"></script>
+        <script src="data/trappenenbetonscheidingschans_17.js"></script>
+        <script src="data/zandstrand_18.js"></script>
+        <script src="data/Verharding_19.js"></script>
+        <script src="data/stratennieuw228oktvlakken_laatst_20.js"></script>
+        <script src="data/panden1940topo_aangepast_21.js"></script>
         <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+            highlightLayer.openPopup();
+        }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[52.84144030250881,5.696929734515048],[52.84824346966293,5.7304992501177034]]);
+        }).fitBounds([[52.84148044223049,5.696930018970931],[52.848203329906674,5.730498934786708]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -157,155 +160,19 @@
                                               {pane: 'pane_HeightmappngLemmer1940_0'});
         bounds_group.addLayer(layer_HeightmappngLemmer1940_0);
         map.addLayer(layer_HeightmappngLemmer1940_0);
-        function pop_10112025topokaart1940tagtopviewAC2010_aangepastV2_1(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['handle'] !== null ? autolinker.link(String(feature.properties['handle']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['block'] !== null ? autolinker.link(String(feature.properties['block']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['etype'] !== null ? autolinker.link(String(feature.properties['etype']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['space'] !== null ? autolinker.link(String(feature.properties['space']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(String(feature.properties['layer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['olinetype'] !== null ? autolinker.link(String(feature.properties['olinetype']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['linetype'] !== null ? autolinker.link(String(feature.properties['linetype']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['color'] !== null ? autolinker.link(String(feature.properties['color']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ocolor'] !== null ? autolinker.link(String(feature.properties['ocolor']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['color24'] !== null ? autolinker.link(String(feature.properties['color24']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['transparency'] !== null ? autolinker.link(String(feature.properties['transparency']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['lweight'] !== null ? autolinker.link(String(feature.properties['lweight']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['linewidth'] !== null ? autolinker.link(String(feature.properties['linewidth']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ltscale'] !== null ? autolinker.link(String(feature.properties['ltscale']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['visible'] !== null ? autolinker.link(String(feature.properties['visible']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['width'] !== null ? autolinker.link(String(feature.properties['width']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['thickness'] !== null ? autolinker.link(String(feature.properties['thickness']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ext'] !== null ? autolinker.link(String(feature.properties['ext']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_10112025topokaart1940tagtopviewAC2010_aangepastV2_1_0() {
-            return {
-                pane: 'pane_10112025topokaart1940tagtopviewAC2010_aangepastV2_1',
-                opacity: 1,
-                color: 'rgba(226,143,19,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_10112025topokaart1940tagtopviewAC2010_aangepastV2_1');
-        map.getPane('pane_10112025topokaart1940tagtopviewAC2010_aangepastV2_1').style.zIndex = 401;
-        map.getPane('pane_10112025topokaart1940tagtopviewAC2010_aangepastV2_1').style['mix-blend-mode'] = 'normal';
-        var layer_10112025topokaart1940tagtopviewAC2010_aangepastV2_1 = new L.geoJson(json_10112025topokaart1940tagtopviewAC2010_aangepastV2_1, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_10112025topokaart1940tagtopviewAC2010_aangepastV2_1',
-            layerName: 'layer_10112025topokaart1940tagtopviewAC2010_aangepastV2_1',
-            pane: 'pane_10112025topokaart1940tagtopviewAC2010_aangepastV2_1',
-            onEachFeature: pop_10112025topokaart1940tagtopviewAC2010_aangepastV2_1,
-            style: style_10112025topokaart1940tagtopviewAC2010_aangepastV2_1_0,
-        });
-        bounds_group.addLayer(layer_10112025topokaart1940tagtopviewAC2010_aangepastV2_1);
-        map.addLayer(layer_10112025topokaart1940tagtopviewAC2010_aangepastV2_1);
-        function pop_weiland1940_2(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAME'] !== null ? autolinker.link(String(feature.properties['NAME']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Skp_GroupI'] !== null ? autolinker.link(String(feature.properties['Skp_GroupI']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['PERIMETER'] !== null ? autolinker.link(String(feature.properties['PERIMETER']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ENCLOSED_A'] !== null ? autolinker.link(String(feature.properties['ENCLOSED_A']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_weiland1940_2_0() {
-            return {
-                pane: 'pane_weiland1940_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(35,103,28,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_weiland1940_2');
-        map.getPane('pane_weiland1940_2').style.zIndex = 402;
-        map.getPane('pane_weiland1940_2').style['mix-blend-mode'] = 'normal';
-        var layer_weiland1940_2 = new L.geoJson(json_weiland1940_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_weiland1940_2',
-            layerName: 'layer_weiland1940_2',
-            pane: 'pane_weiland1940_2',
-            onEachFeature: pop_weiland1940_2,
-            style: style_weiland1940_2_0,
-        });
-        bounds_group.addLayer(layer_weiland1940_2);
-        map.addLayer(layer_weiland1940_2);
-        function pop_grasstruikenboom_3(feature, layer) {
+        function pop_grasstruikenboom_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -339,15 +206,15 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_grasstruikenboom_3_0() {
+        function style_grasstruikenboom_1_0() {
             return {
-                pane: 'pane_grasstruikenboom_3',
-                interactive: true,
+                pane: 'pane_grasstruikenboom_1',
+                interactive: false,
             }
         }
-        function style_grasstruikenboom_3_1() {
+        function style_grasstruikenboom_1_1() {
             return {
-                pane: 'pane_grasstruikenboom_3',
+                pane: 'pane_grasstruikenboom_1',
                 opacity: 1,
                 color: 'rgba(56,128,54,1.0)',
                 dashArray: '',
@@ -355,24 +222,36 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fillOpacity: 0,
-                interactive: true,
+                interactive: false,
             }
         }
-        map.createPane('pane_grasstruikenboom_3');
-        map.getPane('pane_grasstruikenboom_3').style.zIndex = 403;
-        map.getPane('pane_grasstruikenboom_3').style['mix-blend-mode'] = 'normal';
-        var layer_grasstruikenboom_3 = new L.geoJson.multiStyle(json_grasstruikenboom_3, {
+        map.createPane('pane_grasstruikenboom_1');
+        map.getPane('pane_grasstruikenboom_1').style.zIndex = 401;
+        map.getPane('pane_grasstruikenboom_1').style['mix-blend-mode'] = 'normal';
+        var layer_grasstruikenboom_1 = new L.geoJson.multiStyle(json_grasstruikenboom_1, {
             attribution: '',
-            interactive: true,
-            dataVar: 'json_grasstruikenboom_3',
-            layerName: 'layer_grasstruikenboom_3',
-            pane: 'pane_grasstruikenboom_3',
-            onEachFeature: pop_grasstruikenboom_3,
-            styles: [style_grasstruikenboom_3_0,style_grasstruikenboom_3_1,]
+            interactive: false,
+            dataVar: 'json_grasstruikenboom_1',
+            layerName: 'layer_grasstruikenboom_1',
+            pane: 'pane_grasstruikenboom_1',
+            onEachFeature: pop_grasstruikenboom_1,
+            styles: [style_grasstruikenboom_1_0,style_grasstruikenboom_1_1,]
         });
-        bounds_group.addLayer(layer_grasstruikenboom_3);
-        map.addLayer(layer_grasstruikenboom_3);
-        function pop_zeewering1940_4(feature, layer) {
+        bounds_group.addLayer(layer_grasstruikenboom_1);
+        map.addLayer(layer_grasstruikenboom_1);
+        function pop_zeewering1940_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -397,9 +276,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_zeewering1940_4_0() {
+        function style_zeewering1940_2_0() {
             return {
-                pane: 'pane_zeewering1940_4',
+                pane: 'pane_zeewering1940_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -412,21 +291,33 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_zeewering1940_4');
-        map.getPane('pane_zeewering1940_4').style.zIndex = 404;
-        map.getPane('pane_zeewering1940_4').style['mix-blend-mode'] = 'normal';
-        var layer_zeewering1940_4 = new L.geoJson(json_zeewering1940_4, {
+        map.createPane('pane_zeewering1940_2');
+        map.getPane('pane_zeewering1940_2').style.zIndex = 402;
+        map.getPane('pane_zeewering1940_2').style['mix-blend-mode'] = 'normal';
+        var layer_zeewering1940_2 = new L.geoJson(json_zeewering1940_2, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_zeewering1940_4',
-            layerName: 'layer_zeewering1940_4',
-            pane: 'pane_zeewering1940_4',
-            onEachFeature: pop_zeewering1940_4,
-            style: style_zeewering1940_4_0,
+            dataVar: 'json_zeewering1940_2',
+            layerName: 'layer_zeewering1940_2',
+            pane: 'pane_zeewering1940_2',
+            onEachFeature: pop_zeewering1940_2,
+            style: style_zeewering1940_2_0,
         });
-        bounds_group.addLayer(layer_zeewering1940_4);
-        map.addLayer(layer_zeewering1940_4);
-        function pop_Skp_GroupI_brug1ebreggje_5(feature, layer) {
+        bounds_group.addLayer(layer_zeewering1940_2);
+        map.addLayer(layer_zeewering1940_2);
+        function pop_Skp_GroupI_brug1ebreggje_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -460,9 +351,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_brug1ebreggje_5_0() {
+        function style_Skp_GroupI_brug1ebreggje_3_0() {
             return {
-                pane: 'pane_Skp_GroupI_brug1ebreggje_5',
+                pane: 'pane_Skp_GroupI_brug1ebreggje_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -475,21 +366,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_brug1ebreggje_5');
-        map.getPane('pane_Skp_GroupI_brug1ebreggje_5').style.zIndex = 405;
-        map.getPane('pane_Skp_GroupI_brug1ebreggje_5').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_brug1ebreggje_5 = new L.geoJson(json_Skp_GroupI_brug1ebreggje_5, {
+        map.createPane('pane_Skp_GroupI_brug1ebreggje_3');
+        map.getPane('pane_Skp_GroupI_brug1ebreggje_3').style.zIndex = 403;
+        map.getPane('pane_Skp_GroupI_brug1ebreggje_3').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_brug1ebreggje_3 = new L.geoJson(json_Skp_GroupI_brug1ebreggje_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_brug1ebreggje_5',
-            layerName: 'layer_Skp_GroupI_brug1ebreggje_5',
-            pane: 'pane_Skp_GroupI_brug1ebreggje_5',
-            onEachFeature: pop_Skp_GroupI_brug1ebreggje_5,
-            style: style_Skp_GroupI_brug1ebreggje_5_0,
+            dataVar: 'json_Skp_GroupI_brug1ebreggje_3',
+            layerName: 'layer_Skp_GroupI_brug1ebreggje_3',
+            pane: 'pane_Skp_GroupI_brug1ebreggje_3',
+            onEachFeature: pop_Skp_GroupI_brug1ebreggje_3,
+            style: style_Skp_GroupI_brug1ebreggje_3_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_brug1ebreggje_5);
-        map.addLayer(layer_Skp_GroupI_brug1ebreggje_5);
-        function pop_Skp_GroupI_brug2ebreggje_6(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_brug1ebreggje_3);
+        map.addLayer(layer_Skp_GroupI_brug1ebreggje_3);
+        function pop_Skp_GroupI_brug2ebreggje_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -523,9 +426,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_brug2ebreggje_6_0() {
+        function style_Skp_GroupI_brug2ebreggje_4_0() {
             return {
-                pane: 'pane_Skp_GroupI_brug2ebreggje_6',
+                pane: 'pane_Skp_GroupI_brug2ebreggje_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -538,21 +441,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_brug2ebreggje_6');
-        map.getPane('pane_Skp_GroupI_brug2ebreggje_6').style.zIndex = 406;
-        map.getPane('pane_Skp_GroupI_brug2ebreggje_6').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_brug2ebreggje_6 = new L.geoJson(json_Skp_GroupI_brug2ebreggje_6, {
+        map.createPane('pane_Skp_GroupI_brug2ebreggje_4');
+        map.getPane('pane_Skp_GroupI_brug2ebreggje_4').style.zIndex = 404;
+        map.getPane('pane_Skp_GroupI_brug2ebreggje_4').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_brug2ebreggje_4 = new L.geoJson(json_Skp_GroupI_brug2ebreggje_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_brug2ebreggje_6',
-            layerName: 'layer_Skp_GroupI_brug2ebreggje_6',
-            pane: 'pane_Skp_GroupI_brug2ebreggje_6',
-            onEachFeature: pop_Skp_GroupI_brug2ebreggje_6,
-            style: style_Skp_GroupI_brug2ebreggje_6_0,
+            dataVar: 'json_Skp_GroupI_brug2ebreggje_4',
+            layerName: 'layer_Skp_GroupI_brug2ebreggje_4',
+            pane: 'pane_Skp_GroupI_brug2ebreggje_4',
+            onEachFeature: pop_Skp_GroupI_brug2ebreggje_4,
+            style: style_Skp_GroupI_brug2ebreggje_4_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_brug2ebreggje_6);
-        map.addLayer(layer_Skp_GroupI_brug2ebreggje_6);
-        function pop_Skp_GroupI_brugblokjesbregge_7(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_brug2ebreggje_4);
+        map.addLayer(layer_Skp_GroupI_brug2ebreggje_4);
+        function pop_Skp_GroupI_brugblokjesbregge_5(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -586,9 +501,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_brugblokjesbregge_7_0() {
+        function style_Skp_GroupI_brugblokjesbregge_5_0() {
             return {
-                pane: 'pane_Skp_GroupI_brugblokjesbregge_7',
+                pane: 'pane_Skp_GroupI_brugblokjesbregge_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -601,21 +516,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_brugblokjesbregge_7');
-        map.getPane('pane_Skp_GroupI_brugblokjesbregge_7').style.zIndex = 407;
-        map.getPane('pane_Skp_GroupI_brugblokjesbregge_7').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_brugblokjesbregge_7 = new L.geoJson(json_Skp_GroupI_brugblokjesbregge_7, {
+        map.createPane('pane_Skp_GroupI_brugblokjesbregge_5');
+        map.getPane('pane_Skp_GroupI_brugblokjesbregge_5').style.zIndex = 405;
+        map.getPane('pane_Skp_GroupI_brugblokjesbregge_5').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_brugblokjesbregge_5 = new L.geoJson(json_Skp_GroupI_brugblokjesbregge_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_brugblokjesbregge_7',
-            layerName: 'layer_Skp_GroupI_brugblokjesbregge_7',
-            pane: 'pane_Skp_GroupI_brugblokjesbregge_7',
-            onEachFeature: pop_Skp_GroupI_brugblokjesbregge_7,
-            style: style_Skp_GroupI_brugblokjesbregge_7_0,
+            dataVar: 'json_Skp_GroupI_brugblokjesbregge_5',
+            layerName: 'layer_Skp_GroupI_brugblokjesbregge_5',
+            pane: 'pane_Skp_GroupI_brugblokjesbregge_5',
+            onEachFeature: pop_Skp_GroupI_brugblokjesbregge_5,
+            style: style_Skp_GroupI_brugblokjesbregge_5_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_brugblokjesbregge_7);
-        map.addLayer(layer_Skp_GroupI_brugblokjesbregge_7);
-        function pop_Skp_GroupI_brugflevobrug_8(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_brugblokjesbregge_5);
+        map.addLayer(layer_Skp_GroupI_brugblokjesbregge_5);
+        function pop_Skp_GroupI_brugflevobrug_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -649,9 +576,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_brugflevobrug_8_0() {
+        function style_Skp_GroupI_brugflevobrug_6_0() {
             return {
-                pane: 'pane_Skp_GroupI_brugflevobrug_8',
+                pane: 'pane_Skp_GroupI_brugflevobrug_6',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -664,21 +591,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_brugflevobrug_8');
-        map.getPane('pane_Skp_GroupI_brugflevobrug_8').style.zIndex = 408;
-        map.getPane('pane_Skp_GroupI_brugflevobrug_8').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_brugflevobrug_8 = new L.geoJson(json_Skp_GroupI_brugflevobrug_8, {
+        map.createPane('pane_Skp_GroupI_brugflevobrug_6');
+        map.getPane('pane_Skp_GroupI_brugflevobrug_6').style.zIndex = 406;
+        map.getPane('pane_Skp_GroupI_brugflevobrug_6').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_brugflevobrug_6 = new L.geoJson(json_Skp_GroupI_brugflevobrug_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_brugflevobrug_8',
-            layerName: 'layer_Skp_GroupI_brugflevobrug_8',
-            pane: 'pane_Skp_GroupI_brugflevobrug_8',
-            onEachFeature: pop_Skp_GroupI_brugflevobrug_8,
-            style: style_Skp_GroupI_brugflevobrug_8_0,
+            dataVar: 'json_Skp_GroupI_brugflevobrug_6',
+            layerName: 'layer_Skp_GroupI_brugflevobrug_6',
+            pane: 'pane_Skp_GroupI_brugflevobrug_6',
+            onEachFeature: pop_Skp_GroupI_brugflevobrug_6,
+            style: style_Skp_GroupI_brugflevobrug_6_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_brugflevobrug_8);
-        map.addLayer(layer_Skp_GroupI_brugflevobrug_8);
-        function pop_Skp_GroupI_brugkleinbreggjeladlangestreek_9(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_brugflevobrug_6);
+        map.addLayer(layer_Skp_GroupI_brugflevobrug_6);
+        function pop_Skp_GroupI_brugkleinbreggjeladlangestreek_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -712,9 +651,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_brugkleinbreggjeladlangestreek_9_0() {
+        function style_Skp_GroupI_brugkleinbreggjeladlangestreek_7_0() {
             return {
-                pane: 'pane_Skp_GroupI_brugkleinbreggjeladlangestreek_9',
+                pane: 'pane_Skp_GroupI_brugkleinbreggjeladlangestreek_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -727,21 +666,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_brugkleinbreggjeladlangestreek_9');
-        map.getPane('pane_Skp_GroupI_brugkleinbreggjeladlangestreek_9').style.zIndex = 409;
-        map.getPane('pane_Skp_GroupI_brugkleinbreggjeladlangestreek_9').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_brugkleinbreggjeladlangestreek_9 = new L.geoJson(json_Skp_GroupI_brugkleinbreggjeladlangestreek_9, {
+        map.createPane('pane_Skp_GroupI_brugkleinbreggjeladlangestreek_7');
+        map.getPane('pane_Skp_GroupI_brugkleinbreggjeladlangestreek_7').style.zIndex = 407;
+        map.getPane('pane_Skp_GroupI_brugkleinbreggjeladlangestreek_7').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_brugkleinbreggjeladlangestreek_7 = new L.geoJson(json_Skp_GroupI_brugkleinbreggjeladlangestreek_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_brugkleinbreggjeladlangestreek_9',
-            layerName: 'layer_Skp_GroupI_brugkleinbreggjeladlangestreek_9',
-            pane: 'pane_Skp_GroupI_brugkleinbreggjeladlangestreek_9',
-            onEachFeature: pop_Skp_GroupI_brugkleinbreggjeladlangestreek_9,
-            style: style_Skp_GroupI_brugkleinbreggjeladlangestreek_9_0,
+            dataVar: 'json_Skp_GroupI_brugkleinbreggjeladlangestreek_7',
+            layerName: 'layer_Skp_GroupI_brugkleinbreggjeladlangestreek_7',
+            pane: 'pane_Skp_GroupI_brugkleinbreggjeladlangestreek_7',
+            onEachFeature: pop_Skp_GroupI_brugkleinbreggjeladlangestreek_7,
+            style: style_Skp_GroupI_brugkleinbreggjeladlangestreek_7_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_brugkleinbreggjeladlangestreek_9);
-        map.addLayer(layer_Skp_GroupI_brugkleinbreggjeladlangestreek_9);
-        function pop_Skp_GroupI_brugooievaarsnest_10(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_brugkleinbreggjeladlangestreek_7);
+        map.addLayer(layer_Skp_GroupI_brugkleinbreggjeladlangestreek_7);
+        function pop_Skp_GroupI_brugooievaarsnest_8(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -775,9 +726,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_brugooievaarsnest_10_0() {
+        function style_Skp_GroupI_brugooievaarsnest_8_0() {
             return {
-                pane: 'pane_Skp_GroupI_brugooievaarsnest_10',
+                pane: 'pane_Skp_GroupI_brugooievaarsnest_8',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -790,21 +741,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_brugooievaarsnest_10');
-        map.getPane('pane_Skp_GroupI_brugooievaarsnest_10').style.zIndex = 410;
-        map.getPane('pane_Skp_GroupI_brugooievaarsnest_10').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_brugooievaarsnest_10 = new L.geoJson(json_Skp_GroupI_brugooievaarsnest_10, {
+        map.createPane('pane_Skp_GroupI_brugooievaarsnest_8');
+        map.getPane('pane_Skp_GroupI_brugooievaarsnest_8').style.zIndex = 408;
+        map.getPane('pane_Skp_GroupI_brugooievaarsnest_8').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_brugooievaarsnest_8 = new L.geoJson(json_Skp_GroupI_brugooievaarsnest_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_brugooievaarsnest_10',
-            layerName: 'layer_Skp_GroupI_brugooievaarsnest_10',
-            pane: 'pane_Skp_GroupI_brugooievaarsnest_10',
-            onEachFeature: pop_Skp_GroupI_brugooievaarsnest_10,
-            style: style_Skp_GroupI_brugooievaarsnest_10_0,
+            dataVar: 'json_Skp_GroupI_brugooievaarsnest_8',
+            layerName: 'layer_Skp_GroupI_brugooievaarsnest_8',
+            pane: 'pane_Skp_GroupI_brugooievaarsnest_8',
+            onEachFeature: pop_Skp_GroupI_brugooievaarsnest_8,
+            style: style_Skp_GroupI_brugooievaarsnest_8_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_brugooievaarsnest_10);
-        map.addLayer(layer_Skp_GroupI_brugooievaarsnest_10);
-        function pop_Skp_GroupI_brugRienbregge_11(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_brugooievaarsnest_8);
+        map.addLayer(layer_Skp_GroupI_brugooievaarsnest_8);
+        function pop_Skp_GroupI_brugRienbregge_9(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -838,9 +801,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_brugRienbregge_11_0() {
+        function style_Skp_GroupI_brugRienbregge_9_0() {
             return {
-                pane: 'pane_Skp_GroupI_brugRienbregge_11',
+                pane: 'pane_Skp_GroupI_brugRienbregge_9',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -853,21 +816,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_brugRienbregge_11');
-        map.getPane('pane_Skp_GroupI_brugRienbregge_11').style.zIndex = 411;
-        map.getPane('pane_Skp_GroupI_brugRienbregge_11').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_brugRienbregge_11 = new L.geoJson(json_Skp_GroupI_brugRienbregge_11, {
+        map.createPane('pane_Skp_GroupI_brugRienbregge_9');
+        map.getPane('pane_Skp_GroupI_brugRienbregge_9').style.zIndex = 409;
+        map.getPane('pane_Skp_GroupI_brugRienbregge_9').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_brugRienbregge_9 = new L.geoJson(json_Skp_GroupI_brugRienbregge_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_brugRienbregge_11',
-            layerName: 'layer_Skp_GroupI_brugRienbregge_11',
-            pane: 'pane_Skp_GroupI_brugRienbregge_11',
-            onEachFeature: pop_Skp_GroupI_brugRienbregge_11,
-            style: style_Skp_GroupI_brugRienbregge_11_0,
+            dataVar: 'json_Skp_GroupI_brugRienbregge_9',
+            layerName: 'layer_Skp_GroupI_brugRienbregge_9',
+            pane: 'pane_Skp_GroupI_brugRienbregge_9',
+            onEachFeature: pop_Skp_GroupI_brugRienbregge_9,
+            style: style_Skp_GroupI_brugRienbregge_9_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_brugRienbregge_11);
-        map.addLayer(layer_Skp_GroupI_brugRienbregge_11);
-        function pop_Skp_GroupI_brugstoomgemaal_12(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_brugRienbregge_9);
+        map.addLayer(layer_Skp_GroupI_brugRienbregge_9);
+        function pop_Skp_GroupI_brugstoomgemaal_10(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -901,9 +876,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_brugstoomgemaal_12_0() {
+        function style_Skp_GroupI_brugstoomgemaal_10_0() {
             return {
-                pane: 'pane_Skp_GroupI_brugstoomgemaal_12',
+                pane: 'pane_Skp_GroupI_brugstoomgemaal_10',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -916,21 +891,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_brugstoomgemaal_12');
-        map.getPane('pane_Skp_GroupI_brugstoomgemaal_12').style.zIndex = 412;
-        map.getPane('pane_Skp_GroupI_brugstoomgemaal_12').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_brugstoomgemaal_12 = new L.geoJson(json_Skp_GroupI_brugstoomgemaal_12, {
+        map.createPane('pane_Skp_GroupI_brugstoomgemaal_10');
+        map.getPane('pane_Skp_GroupI_brugstoomgemaal_10').style.zIndex = 410;
+        map.getPane('pane_Skp_GroupI_brugstoomgemaal_10').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_brugstoomgemaal_10 = new L.geoJson(json_Skp_GroupI_brugstoomgemaal_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_brugstoomgemaal_12',
-            layerName: 'layer_Skp_GroupI_brugstoomgemaal_12',
-            pane: 'pane_Skp_GroupI_brugstoomgemaal_12',
-            onEachFeature: pop_Skp_GroupI_brugstoomgemaal_12,
-            style: style_Skp_GroupI_brugstoomgemaal_12_0,
+            dataVar: 'json_Skp_GroupI_brugstoomgemaal_10',
+            layerName: 'layer_Skp_GroupI_brugstoomgemaal_10',
+            pane: 'pane_Skp_GroupI_brugstoomgemaal_10',
+            onEachFeature: pop_Skp_GroupI_brugstoomgemaal_10,
+            style: style_Skp_GroupI_brugstoomgemaal_10_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_brugstoomgemaal_12);
-        map.addLayer(layer_Skp_GroupI_brugstoomgemaal_12);
-        function pop_Skp_GroupI_brugtruitjeszijlbregge_13(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_brugstoomgemaal_10);
+        map.addLayer(layer_Skp_GroupI_brugstoomgemaal_10);
+        function pop_Skp_GroupI_brugtruitjeszijlbregge_11(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -964,9 +951,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_brugtruitjeszijlbregge_13_0() {
+        function style_Skp_GroupI_brugtruitjeszijlbregge_11_0() {
             return {
-                pane: 'pane_Skp_GroupI_brugtruitjeszijlbregge_13',
+                pane: 'pane_Skp_GroupI_brugtruitjeszijlbregge_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -979,21 +966,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_brugtruitjeszijlbregge_13');
-        map.getPane('pane_Skp_GroupI_brugtruitjeszijlbregge_13').style.zIndex = 413;
-        map.getPane('pane_Skp_GroupI_brugtruitjeszijlbregge_13').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_brugtruitjeszijlbregge_13 = new L.geoJson(json_Skp_GroupI_brugtruitjeszijlbregge_13, {
+        map.createPane('pane_Skp_GroupI_brugtruitjeszijlbregge_11');
+        map.getPane('pane_Skp_GroupI_brugtruitjeszijlbregge_11').style.zIndex = 411;
+        map.getPane('pane_Skp_GroupI_brugtruitjeszijlbregge_11').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_brugtruitjeszijlbregge_11 = new L.geoJson(json_Skp_GroupI_brugtruitjeszijlbregge_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_brugtruitjeszijlbregge_13',
-            layerName: 'layer_Skp_GroupI_brugtruitjeszijlbregge_13',
-            pane: 'pane_Skp_GroupI_brugtruitjeszijlbregge_13',
-            onEachFeature: pop_Skp_GroupI_brugtruitjeszijlbregge_13,
-            style: style_Skp_GroupI_brugtruitjeszijlbregge_13_0,
+            dataVar: 'json_Skp_GroupI_brugtruitjeszijlbregge_11',
+            layerName: 'layer_Skp_GroupI_brugtruitjeszijlbregge_11',
+            pane: 'pane_Skp_GroupI_brugtruitjeszijlbregge_11',
+            onEachFeature: pop_Skp_GroupI_brugtruitjeszijlbregge_11,
+            style: style_Skp_GroupI_brugtruitjeszijlbregge_11_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_brugtruitjeszijlbregge_13);
-        map.addLayer(layer_Skp_GroupI_brugtruitjeszijlbregge_13);
-        function pop_Skp_GroupI_brugjetramspoorbrekken_14(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_brugtruitjeszijlbregge_11);
+        map.addLayer(layer_Skp_GroupI_brugtruitjeszijlbregge_11);
+        function pop_Skp_GroupI_brugjetramspoorbrekken_12(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1027,9 +1026,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_brugjetramspoorbrekken_14_0() {
+        function style_Skp_GroupI_brugjetramspoorbrekken_12_0() {
             return {
-                pane: 'pane_Skp_GroupI_brugjetramspoorbrekken_14',
+                pane: 'pane_Skp_GroupI_brugjetramspoorbrekken_12',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1042,21 +1041,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_brugjetramspoorbrekken_14');
-        map.getPane('pane_Skp_GroupI_brugjetramspoorbrekken_14').style.zIndex = 414;
-        map.getPane('pane_Skp_GroupI_brugjetramspoorbrekken_14').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_brugjetramspoorbrekken_14 = new L.geoJson(json_Skp_GroupI_brugjetramspoorbrekken_14, {
+        map.createPane('pane_Skp_GroupI_brugjetramspoorbrekken_12');
+        map.getPane('pane_Skp_GroupI_brugjetramspoorbrekken_12').style.zIndex = 412;
+        map.getPane('pane_Skp_GroupI_brugjetramspoorbrekken_12').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_brugjetramspoorbrekken_12 = new L.geoJson(json_Skp_GroupI_brugjetramspoorbrekken_12, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_brugjetramspoorbrekken_14',
-            layerName: 'layer_Skp_GroupI_brugjetramspoorbrekken_14',
-            pane: 'pane_Skp_GroupI_brugjetramspoorbrekken_14',
-            onEachFeature: pop_Skp_GroupI_brugjetramspoorbrekken_14,
-            style: style_Skp_GroupI_brugjetramspoorbrekken_14_0,
+            dataVar: 'json_Skp_GroupI_brugjetramspoorbrekken_12',
+            layerName: 'layer_Skp_GroupI_brugjetramspoorbrekken_12',
+            pane: 'pane_Skp_GroupI_brugjetramspoorbrekken_12',
+            onEachFeature: pop_Skp_GroupI_brugjetramspoorbrekken_12,
+            style: style_Skp_GroupI_brugjetramspoorbrekken_12_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_brugjetramspoorbrekken_14);
-        map.addLayer(layer_Skp_GroupI_brugjetramspoorbrekken_14);
-        function pop_Skp_GroupI_fundamentstoomgemaal_15(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_brugjetramspoorbrekken_12);
+        map.addLayer(layer_Skp_GroupI_brugjetramspoorbrekken_12);
+        function pop_Skp_GroupI_fundamentstoomgemaal_13(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1090,9 +1101,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_fundamentstoomgemaal_15_0() {
+        function style_Skp_GroupI_fundamentstoomgemaal_13_0() {
             return {
-                pane: 'pane_Skp_GroupI_fundamentstoomgemaal_15',
+                pane: 'pane_Skp_GroupI_fundamentstoomgemaal_13',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1105,21 +1116,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_fundamentstoomgemaal_15');
-        map.getPane('pane_Skp_GroupI_fundamentstoomgemaal_15').style.zIndex = 415;
-        map.getPane('pane_Skp_GroupI_fundamentstoomgemaal_15').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_fundamentstoomgemaal_15 = new L.geoJson(json_Skp_GroupI_fundamentstoomgemaal_15, {
+        map.createPane('pane_Skp_GroupI_fundamentstoomgemaal_13');
+        map.getPane('pane_Skp_GroupI_fundamentstoomgemaal_13').style.zIndex = 413;
+        map.getPane('pane_Skp_GroupI_fundamentstoomgemaal_13').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_fundamentstoomgemaal_13 = new L.geoJson(json_Skp_GroupI_fundamentstoomgemaal_13, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_fundamentstoomgemaal_15',
-            layerName: 'layer_Skp_GroupI_fundamentstoomgemaal_15',
-            pane: 'pane_Skp_GroupI_fundamentstoomgemaal_15',
-            onEachFeature: pop_Skp_GroupI_fundamentstoomgemaal_15,
-            style: style_Skp_GroupI_fundamentstoomgemaal_15_0,
+            dataVar: 'json_Skp_GroupI_fundamentstoomgemaal_13',
+            layerName: 'layer_Skp_GroupI_fundamentstoomgemaal_13',
+            pane: 'pane_Skp_GroupI_fundamentstoomgemaal_13',
+            onEachFeature: pop_Skp_GroupI_fundamentstoomgemaal_13,
+            style: style_Skp_GroupI_fundamentstoomgemaal_13_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_fundamentstoomgemaal_15);
-        map.addLayer(layer_Skp_GroupI_fundamentstoomgemaal_15);
-        function pop_Skp_GroupI_fundamentvuurtoren_16(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_fundamentstoomgemaal_13);
+        map.addLayer(layer_Skp_GroupI_fundamentstoomgemaal_13);
+        function pop_Skp_GroupI_fundamentvuurtoren_14(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1153,9 +1176,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_fundamentvuurtoren_16_0() {
+        function style_Skp_GroupI_fundamentvuurtoren_14_0() {
             return {
-                pane: 'pane_Skp_GroupI_fundamentvuurtoren_16',
+                pane: 'pane_Skp_GroupI_fundamentvuurtoren_14',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1168,21 +1191,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_fundamentvuurtoren_16');
-        map.getPane('pane_Skp_GroupI_fundamentvuurtoren_16').style.zIndex = 416;
-        map.getPane('pane_Skp_GroupI_fundamentvuurtoren_16').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_fundamentvuurtoren_16 = new L.geoJson(json_Skp_GroupI_fundamentvuurtoren_16, {
+        map.createPane('pane_Skp_GroupI_fundamentvuurtoren_14');
+        map.getPane('pane_Skp_GroupI_fundamentvuurtoren_14').style.zIndex = 414;
+        map.getPane('pane_Skp_GroupI_fundamentvuurtoren_14').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_fundamentvuurtoren_14 = new L.geoJson(json_Skp_GroupI_fundamentvuurtoren_14, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_fundamentvuurtoren_16',
-            layerName: 'layer_Skp_GroupI_fundamentvuurtoren_16',
-            pane: 'pane_Skp_GroupI_fundamentvuurtoren_16',
-            onEachFeature: pop_Skp_GroupI_fundamentvuurtoren_16,
-            style: style_Skp_GroupI_fundamentvuurtoren_16_0,
+            dataVar: 'json_Skp_GroupI_fundamentvuurtoren_14',
+            layerName: 'layer_Skp_GroupI_fundamentvuurtoren_14',
+            pane: 'pane_Skp_GroupI_fundamentvuurtoren_14',
+            onEachFeature: pop_Skp_GroupI_fundamentvuurtoren_14,
+            style: style_Skp_GroupI_fundamentvuurtoren_14_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_fundamentvuurtoren_16);
-        map.addLayer(layer_Skp_GroupI_fundamentvuurtoren_16);
-        function pop_Skp_GroupI_sluisinlaatenspui_17(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_fundamentvuurtoren_14);
+        map.addLayer(layer_Skp_GroupI_fundamentvuurtoren_14);
+        function pop_Skp_GroupI_sluisinlaatenspui_15(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1216,9 +1251,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Skp_GroupI_sluisinlaatenspui_17_0() {
+        function style_Skp_GroupI_sluisinlaatenspui_15_0() {
             return {
-                pane: 'pane_Skp_GroupI_sluisinlaatenspui_17',
+                pane: 'pane_Skp_GroupI_sluisinlaatenspui_15',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1231,21 +1266,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Skp_GroupI_sluisinlaatenspui_17');
-        map.getPane('pane_Skp_GroupI_sluisinlaatenspui_17').style.zIndex = 417;
-        map.getPane('pane_Skp_GroupI_sluisinlaatenspui_17').style['mix-blend-mode'] = 'normal';
-        var layer_Skp_GroupI_sluisinlaatenspui_17 = new L.geoJson(json_Skp_GroupI_sluisinlaatenspui_17, {
+        map.createPane('pane_Skp_GroupI_sluisinlaatenspui_15');
+        map.getPane('pane_Skp_GroupI_sluisinlaatenspui_15').style.zIndex = 415;
+        map.getPane('pane_Skp_GroupI_sluisinlaatenspui_15').style['mix-blend-mode'] = 'normal';
+        var layer_Skp_GroupI_sluisinlaatenspui_15 = new L.geoJson(json_Skp_GroupI_sluisinlaatenspui_15, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Skp_GroupI_sluisinlaatenspui_17',
-            layerName: 'layer_Skp_GroupI_sluisinlaatenspui_17',
-            pane: 'pane_Skp_GroupI_sluisinlaatenspui_17',
-            onEachFeature: pop_Skp_GroupI_sluisinlaatenspui_17,
-            style: style_Skp_GroupI_sluisinlaatenspui_17_0,
+            dataVar: 'json_Skp_GroupI_sluisinlaatenspui_15',
+            layerName: 'layer_Skp_GroupI_sluisinlaatenspui_15',
+            pane: 'pane_Skp_GroupI_sluisinlaatenspui_15',
+            onEachFeature: pop_Skp_GroupI_sluisinlaatenspui_15,
+            style: style_Skp_GroupI_sluisinlaatenspui_15_0,
         });
-        bounds_group.addLayer(layer_Skp_GroupI_sluisinlaatenspui_17);
-        map.addLayer(layer_Skp_GroupI_sluisinlaatenspui_17);
-        function pop_percelen_18(feature, layer) {
+        bounds_group.addLayer(layer_Skp_GroupI_sluisinlaatenspui_15);
+        map.addLayer(layer_Skp_GroupI_sluisinlaatenspui_15);
+        function pop_percelen_16(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1279,9 +1326,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_percelen_18_0() {
+        function style_percelen_16_0() {
             return {
-                pane: 'pane_percelen_18',
+                pane: 'pane_percelen_16',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1294,21 +1341,33 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_percelen_18');
-        map.getPane('pane_percelen_18').style.zIndex = 418;
-        map.getPane('pane_percelen_18').style['mix-blend-mode'] = 'normal';
-        var layer_percelen_18 = new L.geoJson(json_percelen_18, {
+        map.createPane('pane_percelen_16');
+        map.getPane('pane_percelen_16').style.zIndex = 416;
+        map.getPane('pane_percelen_16').style['mix-blend-mode'] = 'normal';
+        var layer_percelen_16 = new L.geoJson(json_percelen_16, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_percelen_18',
-            layerName: 'layer_percelen_18',
-            pane: 'pane_percelen_18',
-            onEachFeature: pop_percelen_18,
-            style: style_percelen_18_0,
+            dataVar: 'json_percelen_16',
+            layerName: 'layer_percelen_16',
+            pane: 'pane_percelen_16',
+            onEachFeature: pop_percelen_16,
+            style: style_percelen_16_0,
         });
-        bounds_group.addLayer(layer_percelen_18);
-        map.addLayer(layer_percelen_18);
-        function pop_trappenenbetonscheidingschans_19(feature, layer) {
+        bounds_group.addLayer(layer_percelen_16);
+        map.addLayer(layer_percelen_16);
+        function pop_trappenenbetonscheidingschans_17(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1342,9 +1401,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_trappenenbetonscheidingschans_19_0() {
+        function style_trappenenbetonscheidingschans_17_0() {
             return {
-                pane: 'pane_trappenenbetonscheidingschans_19',
+                pane: 'pane_trappenenbetonscheidingschans_17',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1354,24 +1413,36 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(196,60,57,1.0)',
-                interactive: true,
+                interactive: false,
             }
         }
-        map.createPane('pane_trappenenbetonscheidingschans_19');
-        map.getPane('pane_trappenenbetonscheidingschans_19').style.zIndex = 419;
-        map.getPane('pane_trappenenbetonscheidingschans_19').style['mix-blend-mode'] = 'normal';
-        var layer_trappenenbetonscheidingschans_19 = new L.geoJson(json_trappenenbetonscheidingschans_19, {
+        map.createPane('pane_trappenenbetonscheidingschans_17');
+        map.getPane('pane_trappenenbetonscheidingschans_17').style.zIndex = 417;
+        map.getPane('pane_trappenenbetonscheidingschans_17').style['mix-blend-mode'] = 'normal';
+        var layer_trappenenbetonscheidingschans_17 = new L.geoJson(json_trappenenbetonscheidingschans_17, {
             attribution: '',
-            interactive: true,
-            dataVar: 'json_trappenenbetonscheidingschans_19',
-            layerName: 'layer_trappenenbetonscheidingschans_19',
-            pane: 'pane_trappenenbetonscheidingschans_19',
-            onEachFeature: pop_trappenenbetonscheidingschans_19,
-            style: style_trappenenbetonscheidingschans_19_0,
+            interactive: false,
+            dataVar: 'json_trappenenbetonscheidingschans_17',
+            layerName: 'layer_trappenenbetonscheidingschans_17',
+            pane: 'pane_trappenenbetonscheidingschans_17',
+            onEachFeature: pop_trappenenbetonscheidingschans_17,
+            style: style_trappenenbetonscheidingschans_17_0,
         });
-        bounds_group.addLayer(layer_trappenenbetonscheidingschans_19);
-        map.addLayer(layer_trappenenbetonscheidingschans_19);
-        function pop_zandstrand_20(feature, layer) {
+        bounds_group.addLayer(layer_trappenenbetonscheidingschans_17);
+        map.addLayer(layer_trappenenbetonscheidingschans_17);
+        function pop_zandstrand_18(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1405,9 +1476,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_zandstrand_20_0() {
+        function style_zandstrand_18_0() {
             return {
-                pane: 'pane_zandstrand_20',
+                pane: 'pane_zandstrand_18',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1420,21 +1491,33 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_zandstrand_20');
-        map.getPane('pane_zandstrand_20').style.zIndex = 420;
-        map.getPane('pane_zandstrand_20').style['mix-blend-mode'] = 'normal';
-        var layer_zandstrand_20 = new L.geoJson(json_zandstrand_20, {
+        map.createPane('pane_zandstrand_18');
+        map.getPane('pane_zandstrand_18').style.zIndex = 418;
+        map.getPane('pane_zandstrand_18').style['mix-blend-mode'] = 'normal';
+        var layer_zandstrand_18 = new L.geoJson(json_zandstrand_18, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_zandstrand_20',
-            layerName: 'layer_zandstrand_20',
-            pane: 'pane_zandstrand_20',
-            onEachFeature: pop_zandstrand_20,
-            style: style_zandstrand_20_0,
+            dataVar: 'json_zandstrand_18',
+            layerName: 'layer_zandstrand_18',
+            pane: 'pane_zandstrand_18',
+            onEachFeature: pop_zandstrand_18,
+            style: style_zandstrand_18_0,
         });
-        bounds_group.addLayer(layer_zandstrand_20);
-        map.addLayer(layer_zandstrand_20);
-        function pop_Verharding_21(feature, layer) {
+        bounds_group.addLayer(layer_zandstrand_18);
+        map.addLayer(layer_zandstrand_18);
+        function pop_Verharding_19(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1471,9 +1554,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Verharding_21_0() {
+        function style_Verharding_19_0() {
             return {
-                pane: 'pane_Verharding_21',
+                pane: 'pane_Verharding_19',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1483,24 +1566,36 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(78,78,78,1.0)',
-                interactive: true,
+                interactive: false,
             }
         }
-        map.createPane('pane_Verharding_21');
-        map.getPane('pane_Verharding_21').style.zIndex = 421;
-        map.getPane('pane_Verharding_21').style['mix-blend-mode'] = 'normal';
-        var layer_Verharding_21 = new L.geoJson(json_Verharding_21, {
+        map.createPane('pane_Verharding_19');
+        map.getPane('pane_Verharding_19').style.zIndex = 419;
+        map.getPane('pane_Verharding_19').style['mix-blend-mode'] = 'normal';
+        var layer_Verharding_19 = new L.geoJson(json_Verharding_19, {
             attribution: '',
-            interactive: true,
-            dataVar: 'json_Verharding_21',
-            layerName: 'layer_Verharding_21',
-            pane: 'pane_Verharding_21',
-            onEachFeature: pop_Verharding_21,
-            style: style_Verharding_21_0,
+            interactive: false,
+            dataVar: 'json_Verharding_19',
+            layerName: 'layer_Verharding_19',
+            pane: 'pane_Verharding_19',
+            onEachFeature: pop_Verharding_19,
+            style: style_Verharding_19_0,
         });
-        bounds_group.addLayer(layer_Verharding_21);
-        map.addLayer(layer_Verharding_21);
-        function pop_stratennieuw228oktvlakken_laatst_22(feature, layer) {
+        bounds_group.addLayer(layer_Verharding_19);
+        map.addLayer(layer_Verharding_19);
+        function pop_stratennieuw228oktvlakken_laatst_20(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1522,9 +1617,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_stratennieuw228oktvlakken_laatst_22_0() {
+        function style_stratennieuw228oktvlakken_laatst_20_0() {
             return {
-                pane: 'pane_stratennieuw228oktvlakken_laatst_22',
+                pane: 'pane_stratennieuw228oktvlakken_laatst_20',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1537,21 +1632,33 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_stratennieuw228oktvlakken_laatst_22');
-        map.getPane('pane_stratennieuw228oktvlakken_laatst_22').style.zIndex = 422;
-        map.getPane('pane_stratennieuw228oktvlakken_laatst_22').style['mix-blend-mode'] = 'normal';
-        var layer_stratennieuw228oktvlakken_laatst_22 = new L.geoJson(json_stratennieuw228oktvlakken_laatst_22, {
+        map.createPane('pane_stratennieuw228oktvlakken_laatst_20');
+        map.getPane('pane_stratennieuw228oktvlakken_laatst_20').style.zIndex = 420;
+        map.getPane('pane_stratennieuw228oktvlakken_laatst_20').style['mix-blend-mode'] = 'normal';
+        var layer_stratennieuw228oktvlakken_laatst_20 = new L.geoJson(json_stratennieuw228oktvlakken_laatst_20, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_stratennieuw228oktvlakken_laatst_22',
-            layerName: 'layer_stratennieuw228oktvlakken_laatst_22',
-            pane: 'pane_stratennieuw228oktvlakken_laatst_22',
-            onEachFeature: pop_stratennieuw228oktvlakken_laatst_22,
-            style: style_stratennieuw228oktvlakken_laatst_22_0,
+            dataVar: 'json_stratennieuw228oktvlakken_laatst_20',
+            layerName: 'layer_stratennieuw228oktvlakken_laatst_20',
+            pane: 'pane_stratennieuw228oktvlakken_laatst_20',
+            onEachFeature: pop_stratennieuw228oktvlakken_laatst_20,
+            style: style_stratennieuw228oktvlakken_laatst_20_0,
         });
-        bounds_group.addLayer(layer_stratennieuw228oktvlakken_laatst_22);
-        map.addLayer(layer_stratennieuw228oktvlakken_laatst_22);
-        function pop_panden1940topo_aangepast_23(feature, layer) {
+        bounds_group.addLayer(layer_stratennieuw228oktvlakken_laatst_20);
+        map.addLayer(layer_stratennieuw228oktvlakken_laatst_20);
+        function pop_panden1940topo_aangepast_21(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1582,9 +1689,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_panden1940topo_aangepast_23_0() {
+        function style_panden1940topo_aangepast_21_0() {
             return {
-                pane: 'pane_panden1940topo_aangepast_23',
+                pane: 'pane_panden1940topo_aangepast_21',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1597,20 +1704,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_panden1940topo_aangepast_23');
-        map.getPane('pane_panden1940topo_aangepast_23').style.zIndex = 423;
-        map.getPane('pane_panden1940topo_aangepast_23').style['mix-blend-mode'] = 'normal';
-        var layer_panden1940topo_aangepast_23 = new L.geoJson(json_panden1940topo_aangepast_23, {
+        map.createPane('pane_panden1940topo_aangepast_21');
+        map.getPane('pane_panden1940topo_aangepast_21').style.zIndex = 421;
+        map.getPane('pane_panden1940topo_aangepast_21').style['mix-blend-mode'] = 'normal';
+        var layer_panden1940topo_aangepast_21 = new L.geoJson(json_panden1940topo_aangepast_21, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_panden1940topo_aangepast_23',
-            layerName: 'layer_panden1940topo_aangepast_23',
-            pane: 'pane_panden1940topo_aangepast_23',
-            onEachFeature: pop_panden1940topo_aangepast_23,
-            style: style_panden1940topo_aangepast_23_0,
+            dataVar: 'json_panden1940topo_aangepast_21',
+            layerName: 'layer_panden1940topo_aangepast_21',
+            pane: 'pane_panden1940topo_aangepast_21',
+            onEachFeature: pop_panden1940topo_aangepast_21,
+            style: style_panden1940topo_aangepast_21_0,
         });
-        bounds_group.addLayer(layer_panden1940topo_aangepast_23);
-        map.addLayer(layer_panden1940topo_aangepast_23);
+        bounds_group.addLayer(layer_panden1940topo_aangepast_21);
+        map.addLayer(layer_panden1940topo_aangepast_21);
         const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
         "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
         var photonControl = L.control.photon({
